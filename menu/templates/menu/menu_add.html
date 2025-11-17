@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 500px;">
+    <h2>Tambah Menu</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label>Nama Menu</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Harga</label>
+            <input type="number" name="price" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Simpan</button>
+    </form>
+</div>
+{% endblock %}
