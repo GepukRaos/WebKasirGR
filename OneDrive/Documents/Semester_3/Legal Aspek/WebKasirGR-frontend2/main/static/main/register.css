@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  background-color: #f1f5f9; /* latar lembut */
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Kartu register putih tengah */
+.register-container {
+  width: 100%;
+  max-width: 380px;
+  background-color: #ffffff !important;
+  padding: 36px 34px;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+  color: #0f172a;
+  font-family: "Montserrat", "Poppins", Arial, sans-serif;
+  border: 1px solid rgba(2, 6, 23, 0.04);
+  height: auto; /* ubah dari 600px menjadi auto */
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Wrapper untuk isi form */
+.form-inner {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Judul */
+#form-title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #0b1220;
+  margin-bottom: 8px;
+}
+
+/* Subtitle */
+#form-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+/* Label dan grup input */
+.input-group {
+  text-align: left;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.input-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0b1220;
+  margin-bottom: 8px;
+}
+
+/* Field input bergaya form modern */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #e6edf3;
+  background-color: #fbfdff;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #0b1220;
+  outline: none;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.12);
+}
+
+/* Tombol utama biru gelap */
+.register-container button,
+button.register-btn,
+button[type="submit"],
+input[type="submit"] {
+  width: 100%;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, #0b2540 0%, #072038 100%);
+  color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(2, 6, 23, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 8px;
+}
+
+/* Hover / fokus tombol */
+.register-container button:hover,
+button.register-btn:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(2, 6, 23, 0.16);
+  filter: brightness(1.06);
+}
+
+/* Spesifisitas tinggi untuk menimpa bootstrap */
+body .register-container button,
+body button.register-btn {
+  background: linear-gradient(180deg, #0b2540 0%, #072038 100%);
+  color: #fff;
+}
+
+/* Teks kecil di bawah tombol */
+.form-footer {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.form-footer a {
+  color: #0b2540;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Pesan error jika ada */
+.error-message {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+  display: none;
+}
+
+/* Pesan success jika ada */
+.success-message {
+  color: #16a34a;
+  font-size: 12px;
+  margin-top: 4px;
+  display: none;
+}
+
+/* Responsif kecil */
+@media screen and (max-width: 420px) {
+  .register-container {
+    padding: 28px 20px;
+    max-width: 360px;
+  }
+
+  #form-title {
+    font-size: 24px;
+  }
+
+  #form-subtitle {
+    font-size: 12px;
+  }
+
+  .input-group {
+    margin-bottom: 14px;
+  }
+
+  button.register-btn,
+  button[type="submit"] {
+    padding: 11px 12px;
+    font-size: 14px;
+  }
+}
