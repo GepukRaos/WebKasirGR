@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 500px;">
+    <h2 class="text-center">Registrasi Merchant</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-success w-100">Daftar</button>
+    </form>
+
+    <p class="text-center mt-3">
+        Sudah punya akun? <a href="{% url 'login' %}">Login</a>
+    </p>
+</div>
+{% endblock %}

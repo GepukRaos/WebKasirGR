@@ -1,0 +1,362 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div
+  class="relative flex min-h-screen w-full flex-col bg-white overflow-x-hidden"
+  style="font-family: 'Plus Jakarta Sans', 'Noto Sans', sans-serif"
+>
+  <!-- Header -->
+  <div class="sticky top-0 z-10 bg-white border-b border-[#F4F2F0]">
+    <h2
+      class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+    >
+      Menu
+    </h2>
+  </div>
+
+  <!-- Menu -->
+  <div class="flex-grow overflow-y-auto pb-24">
+    <!-- Nasi Goreng -->
+    <div class="p-4">
+      <div class="flex items-stretch justify-between gap-4 rounded-lg">
+        <div class="flex flex-col gap-1 flex-[2_2_0px]">
+          <p class="text-[#181411] text-base font-bold leading-tight">
+            Nasi Goreng
+          </p>
+          <p class="text-[#897261] text-sm font-normal leading-normal">
+            Rp 15.000
+          </p>
+        </div>
+        <!-- HAPUS BAGIAN IMAGE -->
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
+      <p
+        class="text-[#181411] text-base font-normal leading-normal flex-1 truncate"
+      >
+        Jumlah
+      </p>
+      <div class="shrink-0">
+        <div class="flex items-center gap-2 text-[#181411]">
+          <button
+            class="quantity-minus text-base font-medium leading-normal flex h-7 w-7 items-center justify-center rounded-full bg-[#f4f2f0] cursor-pointer"
+          >
+            -
+          </button>
+          <input
+            class="quantity-input text-base font-medium leading-normal w-8 p-0 text-center bg-transparent focus:outline-0 focus:ring-0 focus:border-none border-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            type="number"
+            value="1"
+            min="0"
+          />
+          <button
+            class="quantity-plus text-base font-medium leading-normal flex h-7 w-7 items-center justify-center rounded-full bg-[#f4f2f0] cursor-pointer"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+      <label class="flex flex-col min-w-40 flex-1">
+        <textarea
+          class="notes-input form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border border-[#e6e0db] bg-white focus:border-[#e6e0db] min-h-36 placeholder:text-[#897261] p-[15px] text-base font-normal leading-normal"
+          placeholder="Catatan (opsional)"
+        ></textarea>
+      </label>
+    </div>
+
+    <!-- Mie Goreng -->
+    <div class="p-4">
+      <div class="flex items-stretch justify-between gap-4 rounded-lg">
+        <div class="flex flex-col gap-1 flex-[2_2_0px]">
+          <p class="text-[#181411] text-base font-bold leading-tight">
+            Mie Goreng
+          </p>
+          <p class="text-[#897261] text-sm font-normal leading-normal">
+            Rp 12.000
+          </p>
+        </div>
+        <!-- HAPUS BAGIAN IMAGE -->
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
+      <p
+        class="text-[#181411] text-base font-normal leading-normal flex-1 truncate"
+      >
+        Jumlah
+      </p>
+      <div class="shrink-0">
+        <div class="flex items-center gap-2 text-[#181411]">
+          <button
+            class="quantity-minus text-base font-medium leading-normal flex h-7 w-7 items-center justify-center rounded-full bg-[#f4f2f0] cursor-pointer"
+          >
+            -
+          </button>
+          <input
+            class="quantity-input text-base font-medium leading-normal w-8 p-0 text-center bg-transparent focus:outline-0 focus:ring-0 focus:border-none border-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            type="number"
+            value="1"
+            min="0"
+          />
+          <button
+            class="quantity-plus text-base font-medium leading-normal flex h-7 w-7 items-center justify-center rounded-full bg-[#f4f2f0] cursor-pointer"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+      <label class="flex flex-col min-w-40 flex-1">
+        <textarea
+          class="notes-input form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border border-[#e6e0db] bg-white focus:border-[#e6e0db] min-h-36 placeholder:text-[#897261] p-[15px] text-base font-normal leading-normal"
+          placeholder="Catatan (opsional)"
+        ></textarea>
+      </label>
+    </div>
+
+    <!-- Sate Ayam -->
+    <div class="p-4">
+      <div class="flex items-stretch justify-between gap-4 rounded-lg">
+        <div class="flex flex-col gap-1 flex-[2_2_0px]">
+          <p class="text-[#181411] text-base font-bold leading-tight">
+            Sate Ayam
+          </p>
+          <p class="text-[#897261] text-sm font-normal leading-normal">
+            Rp 20.000
+          </p>
+        </div>
+        <!-- HAPUS BAGIAN IMAGE -->
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
+      <p
+        class="text-[#181411] text-base font-normal leading-normal flex-1 truncate"
+      >
+        Jumlah
+      </p>
+      <div class="shrink-0">
+        <div class="flex items-center gap-2 text-[#181411]">
+          <button
+            class="quantity-minus text-base font-medium leading-normal flex h-7 w-7 items-center justify-center rounded-full bg-[#f4f2f0] cursor-pointer"
+          >
+            -
+          </button>
+          <input
+            class="quantity-input text-base font-medium leading-normal w-8 p-0 text-center bg-transparent focus:outline-0 focus:ring-0 focus:border-none border-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            type="number"
+            value="1"
+            min="0"
+          />
+          <button
+            class="quantity-plus text-base font-medium leading-normal flex h-7 w-7 items-center justify-center rounded-full bg-[#f4f2f0] cursor-pointer"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+      <label class="flex flex-col min-w-40 flex-1">
+        <textarea
+          class="notes-input form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border border-[#e6e0db] bg-white focus:border-[#e6e0db] min-h-36 placeholder:text-[#897261] p-[15px] text-base font-normal leading-normal"
+          placeholder="Catatan (opsional)"
+        ></textarea>
+      </label>
+    </div>
+
+    <!-- Ringkasan pemesanan -->
+    <div class="p-4">
+      <div
+        class="flex flex-col items-stretch justify-end rounded-lg bg-[#f4f2f0] p-4"
+      >
+        <div class="flex w-full items-end justify-between gap-4">
+          <div class="flex max-w-[440px] flex-1 flex-col gap-1">
+            <p
+              class="text-[#181411] tracking-light text-2xl font-bold leading-tight max-w-[440px]"
+            >
+              Ringkasan Pesanan
+            </p>
+            <p
+              class="summary-total text-[#181411] text-base font-medium leading-normal"
+            >
+              Total: Rp 47.000
+            </p>
+          </div>
+          <button
+            class="continue-btn flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#ec6d13] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+          >
+            <span class="truncate">Lanjutkan</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Atas Nama -->
+    <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+      <label class="flex flex-col min-w-40 flex-1">
+        <input
+          class="customer-input form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181411] focus:outline-0 focus:ring-0 border border-[#e6e0db] bg-white focus:border-[#e6e0db] h-14 placeholder:text-[#897261] p-[15px] text-base font-normal leading-normal"
+          placeholder="Pesanan atas nama siapa?"
+          value=""
+        />
+      </label>
+    </div>
+
+    <!-- Radio Button Makan di Tempat / Bungkus -->
+    <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+      <div class="flex flex-col min-w-40 flex-1 gap-3">
+        <p class="text-[#181411] text-base font-normal leading-normal">
+          Pilihan:
+        </p>
+        <div class="flex gap-4">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="order_type"
+              value="dine_in"
+              class="w-4 h-4 text-[#ec6d13] focus:ring-[#ec6d13] border-[#e6e0db]"
+              checked
+            />
+            <span class="text-[#181411] text-base font-normal leading-normal"
+              >Makan di Tempat</span
+            >
+          </label>
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="order_type"
+              value="takeaway"
+              class="w-4 h-4 text-[#ec6d13] focus:ring-[#ec6d13] border-[#e6e0db]"
+            />
+            <span class="text-[#181411] text-base font-normal leading-normal"
+              >Bungkus</span
+            >
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Button -->
+    <div class="flex px-4 py-3">
+      <button
+        class="add-to-queue-btn flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-[#ec6d13] text-white text-base font-bold leading-normal tracking-[0.015em]"
+      >
+        <span class="truncate">Tambahkan ke Antrian</span>
+      </button>
+    </div>
+    <div class="h-5 bg-white"></div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div
+    class="fixed bottom-0 left-0 right-0 bg-white p-4 pt-2 border-t border-[#F4F2F0]"
+  >
+    <div
+      class="flex w-full items-center justify-center rounded-lg bg-[#F4F2F0] p-1"
+    >
+      <button
+        class="flex-1 rounded-md bg-white py-2 px-4 text-center text-sm font-bold text-[#181411] shadow-sm"
+      >
+        Pengambilan Pesanan
+      </button>
+      <a
+        href="/antrian/"
+        class="flex-1 rounded-md py-2 px-4 text-center text-sm font-medium text-[#897261]"
+        >Antrian Pesanan</a
+      >
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Quantity buttons functionality
+    const minusButtons = document.querySelectorAll(".quantity-minus");
+    const plusButtons = document.querySelectorAll(".quantity-plus");
+    const quantityInputs = document.querySelectorAll(".quantity-input");
+
+    // Prices for each menu item
+    const prices = [15000, 12000, 20000];
+
+    // Update quantity
+    function updateQuantity(index, change) {
+      const input = quantityInputs[index];
+      let value = parseInt(input.value) || 0;
+      value += change;
+      if (value < 0) value = 0;
+      input.value = value;
+      updateOrderSummary();
+    }
+
+    // Add event listeners to minus buttons
+    minusButtons.forEach((button, index) => {
+      button.addEventListener("click", () => updateQuantity(index, -1));
+    });
+
+    // Add event listeners to plus buttons
+    plusButtons.forEach((button, index) => {
+      button.addEventListener("click", () => updateQuantity(index, 1));
+    });
+
+    // Add event listeners to quantity inputs
+    quantityInputs.forEach((input, index) => {
+      input.addEventListener("change", function () {
+        let value = parseInt(this.value) || 0;
+        if (value < 0) value = 0;
+        this.value = value;
+        updateOrderSummary();
+      });
+    });
+
+    // Update order summary
+    function updateOrderSummary() {
+      let total = 0;
+
+      quantityInputs.forEach((input, index) => {
+        const quantity = parseInt(input.value) || 0;
+        total += quantity * prices[index];
+      });
+
+      const totalElement = document.querySelector(".summary-total");
+      if (totalElement) {
+        totalElement.textContent = `Total: Rp ${total.toLocaleString()}`;
+      }
+    }
+
+    // Continue button
+    const continueBtn = document.querySelector(".continue-btn");
+    if (continueBtn) {
+      continueBtn.addEventListener("click", function () {
+        alert("Melanjutkan ke pembayaran...");
+      });
+    }
+
+    // Add to queue button
+    const addToQueueBtn = document.querySelector(".add-to-queue-btn");
+    if (addToQueueBtn) {
+      addToQueueBtn.addEventListener("click", function () {
+        const customerName = document.querySelector(".customer-input").value;
+        const orderType = document.querySelector(
+          'input[name="order_type"]:checked'
+        ).value;
+        const orderTypeText =
+          orderType === "dine_in" ? "Makan di Tempat" : "Bungkus";
+
+        if (!customerName.trim()) {
+          alert("Masukkan nama pelanggan terlebih dahulu!");
+          return;
+        }
+        alert(
+          `Pesanan untuk ${customerName} (${orderTypeText}) ditambahkan ke antrian!`
+        );
+      });
+    }
+  });
+</script>
+{% endblock %}
