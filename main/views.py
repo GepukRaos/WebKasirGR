@@ -12,10 +12,6 @@ def landing_page(request):
         return redirect("dashboard")
     return render(request, 'landingPage.html')
 
-
-def order_page(request):
-    return render(request, 'orderpage.html')
-
 def antrian_page(request):
     return render(request, 'antrian.html')
 

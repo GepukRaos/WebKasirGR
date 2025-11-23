@@ -2,10 +2,13 @@
 
 {% block content %}
 <div class="container mt-5">
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary mb-3">⬅ Kembali ke Dashboard</a>
+
+
     <h2>Daftar Menu</h2>
 
     <a href="{% url 'menu_add' %}" class="btn btn-success mb-3">Tambah Menu</a>
-
     <table class="table">
         <thead>
             <tr>

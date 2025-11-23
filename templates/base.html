@@ -36,6 +36,7 @@
       type="text/css"
       href="{% static 'pages/style.css' %}"
     />
+    {% block extra_css %}{% endblock extra_css %}
   </head>
   <body>
     {% block content %} {% endblock content %}
