@@ -1,2 +1,17 @@
-<h1>Selamat datang, {{ request.user.username }}</h1>
-<a href="{% url 'logout' %}">Logout</a>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Dashboard {{ merchant.store_name }}</h2>
+
+    <p>Halo, {{ user.username }}!</p>
+
+    <a href="{% url 'menu_list' %}" class="btn btn-primary">Kelola Menu</a>
+
+    <a href="{% url 'order_page' %}" class="btn btn-success">Buat Pesanan</a>
+
+    <a href="{% url 'antrian' %}" class="btn btn-warning">Lihat Antrian</a>
+
+    <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+</div>
+{% endblock %} 

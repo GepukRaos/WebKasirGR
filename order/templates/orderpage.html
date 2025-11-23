@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<form method="POST">
+  {% csrf_token %}
+
+<div class="relative flex min-h-screen w-full flex-col bg-white overflow-x-hidden"
+  style="font-family: 'Plus Jakarta Sans', 'Noto Sans', sans-serif">
+
+  <!-- HEADER -->
+  <div class="sticky top-0 z-10 bg-white border-b border-[#F4F2F0]">
+    <h2 class="text-[#181411] text-[22px] font-bold px-4 pb-3 pt-5">Menu</h2>
+  </div>
+
+  <!-- SCROLL AREA -->
+  <div class="flex-grow overflow-y-auto pb-24">
+
+    {% for m in menus %}
+    <!-- MENU ITEM -->
+    <div class="p-4">
+      <div class="flex items-stretch justify-between gap-4">
+        <div class="flex flex-col gap-1 flex-[2_2_0px]">
+          <p class="text-[#181411] text-base font-bold">{{ m.name }}</p>
+          <p class="text-[#897261] text-sm">Rp {{ m.price|floatformat:0 }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUANTITY -->
+    <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
+      <p class="text-[#181411] text-base flex-1">Jumlah</p>
+      <div class="shrink-0">
+        <div class="flex items-center gap-2 text-[#181411]">
+
+          <button type="button"
+            class="quantity-minus h-7 w-7 flex items-center justify-center rounded-full bg-[#f4f2f0]"
+            data-target="qty_{{ m.id }}">
+            -
+          </button>
+
+          <input id="qty_{{ m.id }}" name="qty_{{ m.id }}"
+            type="number" value="0" min="0"
+            class="quantity-input w-8 text-center bg-transparent" />
+
+          <button type="button"
+            class="quantity-plus h-7 w-7 flex items-center justify-center rounded-full bg-[#f4f2f0]"
+            data-target="qty_{{ m.id }}">
+            +
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTE -->
+    <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+      <label class="flex flex-col min-w-40 flex-1">
+        <textarea
+          name="note_{{ m.id }}"
+          class="notes-input form-input w-full min-h-36 border border-[#e6e0db] rounded-lg p-[15px]"
+          placeholder="Catatan (opsional)"></textarea>
+      </label>
+    </div>
+
+    {% endfor %}
+
+    <!-- CUSTOMER NAME -->
+    <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+      <label class="flex flex-col flex-1">
+        <input
+          name="customer_name"
+          class="form-input w-full h-14 border border-[#e6e0db] rounded-lg p-[15px]"
+          placeholder="Pesanan atas nama siapa?" required>
+      </label>
+    </div>
+
+    <!-- ORDER TYPE -->
+    <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+      <div class="flex flex-col flex-1 gap-3">
+        <p class="text-base">Pilihan:</p>
+        <div class="flex gap-4">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="radio" name="order_type" value="dine_in" checked>
+            <span>Makan di Tempat</span>
+          </label>
+
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="radio" name="order_type" value="takeaway">
+            <span>Bungkus</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="flex px-4 py-3">
+      <button type="submit"
+        class="flex flex-1 justify-center h-12 rounded-lg bg-[#ec6d13] text-white font-bold">
+        Tambahkan ke Antrian
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>
+
+<!-- JS -->
+<script>
+document.querySelectorAll(".quantity-plus").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const input = document.getElementById(btn.dataset.target);
+    input.value = parseInt(input.value || 0) + 1;
+  });
+});
+
+document.querySelectorAll(".quantity-minus").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const input = document.getElementById(btn.dataset.target);
+    const current = parseInt(input.value || 0);
+    if (current > 0) input.value = current - 1;
+  });
+});
+</script>
+
+{% endblock %}
