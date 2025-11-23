@@ -1,0 +1,90 @@
+body {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Montserrat", Arial, sans-serif;
+  background-color: #f1f5f9; /* Latar belakang lembut */
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+h1.welcome-message {
+  font-size: 32px;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.greeting-message {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Tombol */
+button,
+button.btn-primary,
+button.btn-success,
+button.btn-danger {
+  border: none;
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #072038 !important; /* Pastikan warna tetap konsisten */
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(2,6,23,0.12);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 80px; /* Spacing yang sama seperti sebelumnya */
+}
+
+button:hover,
+button.btn-primary:hover,
+button.btn-success:hover,
+button.btn-danger:hover {
+  transform: translateY(-2px);
+  background-color: #072038 !important;
+  filter: brightness(1.06); 
+}
+
+.btn,
+.btn-primary,
+.btn-success,
+.btn-danger {
+  background-color: #072038;
+  color: #ffffff;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-white {
+  color: white;
+}

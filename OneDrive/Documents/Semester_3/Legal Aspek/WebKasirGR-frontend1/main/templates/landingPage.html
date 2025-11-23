@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'main/landingPage.css' %}" />
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container text-center mt-5">
+  <h1 class="welcome-message">Selamat Datang di Sistem Antrian Kasir</h1>
+
+  {% if user.is_authenticated %}
+  <p class="greeting-message">Halo, {{ user.username }}!</p>
+  <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+  {% else %}
+  <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+  <a href="{% url 'register' %}" class="btn btn-success">Register</a>
+  {% endif %}
+</div>
+{% endblock %}
