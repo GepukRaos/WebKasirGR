@@ -1,38 +1,83 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="min-h-screen bg-gray-50">
+  <!-- Header -->
+  <div class="bg-orange-500 text-white p-6">
+    <h1 class="text-2xl font-bold">Daftar Menu</h1>
+  </div>
 
-{% block content %}
-<div class="container mt-5">
+  <!-- Content -->
+  <div class="max-w-4xl mx-auto p-6">
+    <!-- Tambah Menu Button -->
+    <div class="mb-6">
+      <a
+        href="{% url 'menu_add' %}"
+        class="inline-flex items-center bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors"
+      >
+        Tambah Menu
+      </a>
+    </div>
 
-    <a href="{% url 'dashboard' %}" class="btn btn-secondary mb-3">⬅ Kembali ke Dashboard</a>
-
-
-    <h2>Daftar Menu</h2>
-
-    <a href="{% url 'menu_add' %}" class="btn btn-success mb-3">Tambah Menu</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nama Menu</th>
-                <th>Harga</th>
-                <th>Aksi</th>
-            </tr>
+    <!-- Table -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <table class="w-full">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-800">
+              Nama Menu
+            </th>
+            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-800">
+              Harga
+            </th>
+            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-800">
+              Aksi
+            </th>
+          </tr>
         </thead>
-        <tbody>
-            {% for m in menus %}
-            <tr>
-                <td>{{ m.name }}</td>
-                <td>Rp{{ m.price }}</td>
-                <td>
-                    <a href="{% url 'menu_edit' m.id %}" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="{% url 'menu_delete' m.id %}" class="btn btn-danger btn-sm">Hapus</a>
-                </td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="3" class="text-center">Belum ada menu.</td>
-            </tr>
-            {% endfor %}
+        <tbody class="divide-y divide-gray-200">
+          {% for m in menus %}
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-6 py-4 text-sm text-gray-800">{{ m.name }}</td>
+            <td class="px-6 py-4 text-sm text-gray-800">Rp{{ m.price }}</td>
+            <td class="px-6 py-4">
+              <div class="flex space-x-2">
+                <a
+                  href="{% url 'menu_edit' m.id %}"
+                  class="inline-flex items-center bg-yellow-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-yellow-600 transition-colors"
+                >
+                  Edit
+                </a>
+                <a
+                  href="{% url 'menu_delete' m.id %}"
+                  class="inline-flex items-center bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition-colors"
+                >
+                  Hapus
+                </a>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="3" class="px-6 py-8 text-center text-gray-500">
+              <p>Belum ada menu.</p>
+            </td>
+          </tr>
+          {% endfor %}
         </tbody>
-    </table>
+      </table>
+    </div>
+
+    <a
+      href="{% url 'dashboard' %}"
+      class="inline-flex text-white items-center text-orange-100 hover:text-white hover:font-bold mb-2 transition-all duration-200 bg-orange-500 px-4 py-2 rounded-lg mt-3"
+    >
+      Kembali ke Dashboard
+    </a>
+  </div>
 </div>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+</style>
 {% endblock %}

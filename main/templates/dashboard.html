@@ -1,17 +1,68 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="min-h-screen bg-gray-50">
+  <!-- Header di atas -->
+  <div class="bg-orange-500 text-white p-6 text-center">
+    <h1 class="text-2xl font-bold">Selamat Datang</h1>
+    <p class="text-orange-100">{{ merchant.store_name }}</p>
+  </div>
 
-{% block content %}
-<div class="container mt-5">
-    <h2>Dashboard {{ merchant.store_name }}</h2>
+  <!-- Welcome Message -->
+  <div class="bg-white p-6 border-b">
+    <p class="text-gray-600 text-center">
+      Halo,
+      <span class="font-semibold text-gray-800">{{ user.username }}</span>!
+      Selamat beraktivitas.
+    </p>
+  </div>
 
-    <p>Halo, {{ user.username }}!</p>
+  <!-- Menu Grid di tengah -->
+  <div class="max-w-md mx-auto p-6">
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Kelola Menu -->
+      <a
+        href="{% url 'menu_list' %}"
+        class="bg-white border border-orange-200 rounded-lg p-6 text-center hover:shadow-lg hover:border-orange-400 transition-all duration-200 group"
+      >
+        <h3 class="font-bold text-gray-800 text-base mb-2">Kelola Menu</h3>
+        <p class="text-gray-500 text-sm">Tambah, edit, hapus menu</p>
+      </a>
 
-    <a href="{% url 'menu_list' %}" class="btn btn-primary">Kelola Menu</a>
+      <!-- Ambil Pesanan -->
+      <a
+        href="{% url 'order_page' %}"
+        class="bg-white border border-orange-200 rounded-lg p-6 text-center hover:shadow-lg hover:border-orange-400 transition-all duration-200 group"
+      >
+        <h3 class="font-bold text-gray-800 text-base mb-2">Ambil Pesanan</h3>
+        <p class="text-gray-500 text-sm">Tambah ke antrian</p>
+      </a>
 
-    <a href="{% url 'order_page' %}" class="btn btn-success">Buat Pesanan</a>
+      <!-- Antrian -->
+      <a
+        href="{% url 'antrian' %}"
+        class="bg-white border border-orange-200 rounded-lg p-6 text-center hover:shadow-lg hover:border-orange-400 transition-all duration-200 group"
+      >
+        <h3 class="font-bold text-gray-800 text-base mb-2">Antrian</h3>
+        <p class="text-gray-500 text-sm">Lihat daftar antrian</p>
+      </a>
 
-    <a href="{% url 'antrian' %}" class="btn btn-warning">Lihat Antrian</a>
+      <!-- Log Out -->
+      <a
+        href="{% url 'logout' %}"
+        class="bg-white border border-red-200 rounded-lg p-6 text-center hover:shadow-lg hover:border-red-400 transition-all duration-200 group"
+      >
+        <h3 class="font-bold text-gray-800 text-base mb-2">Log Out</h3>
+        <p class="text-gray-500 text-sm">Keluar aplikasi</p>
+      </a>
+    </div>
+  </div>
 
-    <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+  <!-- Spacer untuk bottom navigation -->
+  <div class="h-24"></div>
 </div>
-{% endblock %} 
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+</style>
+{% endblock %}
