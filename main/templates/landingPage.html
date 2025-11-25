@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'main/landingPage.css' %}" />
+{% endblock extra_css %}
+
 {% block content %}
 <div class="container text-center mt-5">
     <h1>Selamat Datang di Sistem Antrian Kasir</h1>
