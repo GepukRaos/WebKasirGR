@@ -8,7 +8,13 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*",]  # Koyeb meng-handle domain otomatis
+import os
+
+ALLOWED_HOSTS = [
+    "*",
+    os.getenv("KOYEB_APP_URL", "").replace("https://", "").replace("http://", ""),
+]
+ # Koyeb meng-handle domain otomatis
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -33,6 +39,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'web_kasir_GR.urls'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://" + os.getenv("KOYEB_APP_URL", ""),
+    "https://" + os.getenv("KOYEB_URL", "")
+]
+
 
 TEMPLATES = [
     {
