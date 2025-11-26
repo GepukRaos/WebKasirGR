@@ -27,6 +27,13 @@
             {{ order.customer_name }}
           </p>
           <p class="text-[#897261] text-sm">Pesanan #{{ order.id }}</p>
+
+          <!-- LIST PESANAN -->
+          <ul class="text-sm text-[#897261] mt-1 ml-1 list-disc">
+            {% for item in order.items.all %}
+              <li>{{ item.menu.name }} (x{{ item.quantity }}){% if item.note %} - <i>{{ item.note }}</i>{% endif %}</li>
+            {% endfor %}
+          </ul>
         </div>
 
         <a
@@ -61,6 +68,11 @@
           </p>
           <p class="text-[#897261] text-sm">Pesanan #{{ order.id }} selesai</p>
         </div>
+        <ul class="text-sm text-[#897261] mt-1 ml-1 list-disc">
+          {% for item in order.items.all %}
+            <li>{{ item.menu.name }} (x{{ item.quantity }}){% if item.note %} - <i>{{ item.note }}</i>{% endif %}</li>
+          {% endfor %}
+        </ul>
       </div>
       {% empty %}
       <p class="text-[#897261] ml-2">Belum ada pesanan selesai.</p>
