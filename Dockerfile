@@ -22,5 +22,15 @@ RUN python manage.py collectstatic --noinput || true
 # Expose port
 EXPOSE 8000
 
+# === Tambahkan ENV Koyeb di sini ===
+# Domain Koyeb kamu, TANPA https://
+ENV KOYEB_APP_URL=myapp-koyeb.koyeb.app
+ENV KOYEB_URL=myapp-koyeb.koyeb.app
+
+# Opsional: izinkan semua hosts
+ENV DJANGO_ALLOWED_HOSTS=*
+
 # Gunicorn command
 CMD ["gunicorn", "web_kasir_GR.wsgi:application", "--bind", "0.0.0.0:8000"]
+
+
