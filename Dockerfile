@@ -34,7 +34,7 @@ ENV DEBUG=${DEBUG}
 ENV DJANGO_ALLOWED_HOSTS=*
 
 # Gunicorn command
-CMD ["gunicorn", "web_kasir_GR.wsgi:application", "--bind", "0.0.0.0:${PORT}"]
+CMD gunicorn web_kasir_GR.wsgi:application --bind 0.0.0.0:$PORT
 
 
 
