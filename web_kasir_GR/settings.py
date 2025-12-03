@@ -11,8 +11,9 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 import os
 
 ALLOWED_HOSTS = [
-    "*",
-    os.getenv("KOYEB_APP_URL", "").replace("https://", "").replace("http://", ""),
+    "annoyed-chicky-kasirgr-01-75b2d487.koyeb.app",
+    ".koyeb.app",
+    "*"
 ]
  # Koyeb meng-handle domain otomatis
 
@@ -41,8 +42,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'web_kasir_GR.urls'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://" + os.getenv("KOYEB_APP_URL", ""),
-    "https://" + os.getenv("KOYEB_URL", "")
+    "https://annoyed-chicky-kasirgr-01-75b2d487.koyeb.app",
+    "https://*.koyeb.app"
 ]
 
 
