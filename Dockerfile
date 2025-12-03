@@ -24,8 +24,8 @@ EXPOSE 8000
 
 # === Tambahkan ENV Koyeb di sini ===
 # Domain Koyeb kamu, TANPA https://
-ENV KOYEB_APP_URL=myapp-koyeb.koyeb.app
-ENV KOYEB_URL=myapp-koyeb.koyeb.app
+ENV KOYEB_APP_URL=${KOYEB_APP_URL}
+ENV KOYEB_URL=${KOYEB_URL}
 ENV SECRET_KEY=${SECRET_KEY}
 ENV DATABASE_URL=${DATABASE_URL}
 ENV DEBUG=${DEBUG}
