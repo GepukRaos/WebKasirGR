@@ -1,6 +1,5 @@
 FROM python:3.10-slim
 
-# Working directory
 WORKDIR /app
 
 # Install OS dependencies
@@ -10,31 +9,17 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-COPY requirement.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirement.txt
 
-# Copy project files
+# Copy project
 COPY . .
 
-# Collect static files (safe even if DEBUG=True)
-RUN python manage.py collectstatic --noinput || true
+# (IMPORTANT) DO NOT run collectstatic or migrate at build time
+# They MUST run at runtime, when environment variables exist.
 
-# Expose port
+# Expose port (optional)
 EXPOSE 8000
 
-# === Tambahkan ENV Koyeb di sini ===
-# Domain Koyeb kamu, TANPA https://
-ENV KOYEB_APP_URL=${KOYEB_APP_URL}
-ENV KOYEB_URL=${KOYEB_URL}
-ENV SECRET_KEY=${SECRET_KEY}
-ENV DATABASE_URL=${DATABASE_URL}
-ENV DEBUG=${DEBUG}
-
-# Opsional: izinkan semua hosts
-ENV DJANGO_ALLOWED_HOSTS=*
-
-# Gunicorn command
+# Start gunicorn with KOYEB-$PORT
 CMD gunicorn web_kasir_GR.wsgi:application --bind 0.0.0.0:$PORT
-
-
-
