@@ -26,6 +26,9 @@ EXPOSE 8000
 # Domain Koyeb kamu, TANPA https://
 ENV KOYEB_APP_URL=myapp-koyeb.koyeb.app
 ENV KOYEB_URL=myapp-koyeb.koyeb.app
+ENV SECRET_KEY=${SECRET_KEY}
+ENV DATABASE_URL=${DATABASE_URL}
+ENV DEBUG=${DEBUG}
 
 # Opsional: izinkan semua hosts
 ENV DJANGO_ALLOWED_HOSTS=*
