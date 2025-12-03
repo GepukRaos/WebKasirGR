@@ -86,3 +86,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+print("DEBUG ENV CHECK → KOYEB_APP_URL =", os.getenv("KOYEB_APP_URL"))
+print("DEBUG ENV CHECK → CSRF_TRUSTED_ORIGINS =", CSRF_TRUSTED_ORIGINS)
+
